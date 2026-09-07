@@ -46,7 +46,9 @@ Beyond the backend remodeling, a clean and powerful data layer was built using D
 
 ## Repository Structure
 * Data_Model_Remodeling.pbix — The primary Power BI file containing the remodeled star schema (saved with randomized/masked data for confidentiality).
+* raw_tables.xlsx - A file containing raw tables and data obtained directly from the source.
 * README.md — Project documentation and architecture logs.
+
 
 ---
 
