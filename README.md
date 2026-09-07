@@ -23,6 +23,7 @@ The project successfully addressed critical data engineering challenges by shift
 * Vertical Cleavage of Entities: Transactional data was split horizontally across multiple tables by year (e.g., ORDERS 2025, ORDERS 2026), which unnecessarily complicated cross-year analytical calculations.
 * Non-Standardized Naming Conventions: The model contained a mix of UPPER_CASE, camelCase, and names with spaces (e.g., CUST_MASTER, invoice_lines, ORDERS 2025), reducing readability and maintainability.
 * Absence of Reliable Keys: The raw source lacked clean primary keys, risking unstable many-to-many relationships and data ambiguity.
+<img width="1920" height="1032" alt="Знімок екрана 2026-09-07 163723" src="https://github.com/user-attachments/assets/fd08cdad-c26b-4dc2-9e7f-42251d2eaa24" />
 
 ### Target State Solutions (After)
 * Implementation of a Strict Star Schema: Designed a clean separation between Fact Tables (fact_sales, fact_inventory, fact_order_process, fact_campaign_spend, fact_promotion_coverage) and Dimension Tables (dim_customers, dim_products, dim_dates, dim_geo, dim_campaign).
@@ -31,6 +32,7 @@ The project successfully addressed critical data engineering challenges by shift
   * Data Normalization: Inside tables, text attributes were programmatically converted to UPPERCASE to eliminate duplicate rows caused by mixed-case inputs.
   * Custom Surrogate Keys (_key): Generated robust unique identifier columns manually in Power Query (e.g., _customer_key, _product_key) instead of relying on unstable legacy IDs from SAP.
 * Structural Segmentation: Isolated technical elements, security configurations (security), and measures into distinct system tables (e.g., _measures) for efficient maintenance.
+<img width="1920" height="1032" alt="Знімок екрана 2026-09-07 163759" src="https://github.com/user-attachments/assets/9ecf816b-f1c9-4f47-826e-d01bf118199d" />
 
 ---
 
